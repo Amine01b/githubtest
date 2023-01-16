@@ -1,6 +1,7 @@
 package com.mycompany.invoise;
 
 import com.mycompany.invoise.controller.InvoiceController;
+import com.mycompany.invoise.controller.InvoiceControllerChambouleToutMagasin2;
 import com.mycompany.invoise.controller.InvoiceControllerMichel;
 import com.mycompany.invoise.repository.InvoiceRepository;
 import com.mycompany.invoise.repository.InvoiceRepositoryMichel;
@@ -34,5 +35,22 @@ public class App
             invoiceService.setInvoiceRepository(invoiceRepository);
             invoiceController.createInvoice() ;
         }
+        else if(configuration==3){
+            InvoiceControllerMichel invoiceController = new InvoiceControllerMichel();
+            InvoiceService invoiceService=new InvoiceService();
+            invoiceController.setInvoiceService(invoiceService);
+            InvoiceRepositoryMichel invoiceRepository = new InvoiceRepositoryMichel();
+            invoiceService.setInvoiceRepository(invoiceRepository);
+            invoiceController.createInvoice() ;
+        }
+        else if(configuration==4){
+            InvoiceControllerChambouleToutMagasin2 invoiceController = new InvoiceControllerChambouleToutMagasin2();
+            InvoiceService invoiceService=new InvoiceService();
+            invoiceController.setInvoiceService(invoiceService);
+            InvoiceRepositoryMichel invoiceRepository = new InvoiceRepositoryMichel();
+            invoiceService.setInvoiceRepository(invoiceRepository);
+            invoiceController.createInvoice() ;
+        }
+
     }
 }
